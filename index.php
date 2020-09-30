@@ -1,24 +1,6 @@
 <?php declare(strict_types=1);
 
-class File
-{
-    private string $file;
-
-    public function __construct(string $file)
-    {
-        $this->file = $file;
-    }
-
-    public function getContents(): string
-    {
-        return file_get_contents($this->file);
-    }
-
-    public function putContents(string $current)
-    {
-        file_put_contents($this->file, $current);
-    }
-}
+require_once 'File.php';
 
 $file = new File('numbers.txt');
 $current = $file->getContents();
